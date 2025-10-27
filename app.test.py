@@ -21,12 +21,12 @@ class TestApp(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(data), 1)
-        self.assertEqual(data[1]['title'], 'Test Title')
+        self.assertEqual(data[0]['title'], 'Test Title')
         self.assertEqual(data[0]['content'], 'Test Content')
         self.assertEqual(data[0]['user_id'], 'user123')
 
     @patch('app.collection')
-    def test_create_post(self, mock_collection):
+    def test_create_post(self, mock_collection, alt_mock):
         new_post = {'title': 'New Title', 'content': 'New Content'}
         headers = {'user-id': 'user456'}
 
