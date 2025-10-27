@@ -26,7 +26,7 @@ class TestApp(unittest.TestCase):
         self.assertEqual(data[0]['user_id'], 'user123')
 
     @patch('app.collection')
-    def test_create_post(self, mock_collection, alt_mock):
+    def test_create_post(self, mock_collection):
         new_post = {'title': 'New Title', 'content': 'New Content'}
         headers = {'user-id': 'user456'}
 
